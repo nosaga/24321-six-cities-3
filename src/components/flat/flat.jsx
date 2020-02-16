@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Flat = (props) => {
-  const {flat} = props;
+  const {flat, onTitleClick} = props;
 
   return (
     <article className="cities__place-card place-card">
@@ -33,7 +33,7 @@ const Flat = (props) => {
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
-        <h2 className="place-card__name">
+        <h2 className="place-card__name" onClick={onTitleClick}>
           <a href="#">{flat}</a>
         </h2>
         <p className="place-card__type">Apartment</p>
@@ -43,7 +43,8 @@ const Flat = (props) => {
 };
 
 Flat.propTypes = {
-  flat: PropTypes.string.isRequired
+  flat: PropTypes.string.isRequired,
+  onTitleClick: PropTypes.func.isRequired
 };
 
 export default Flat;
