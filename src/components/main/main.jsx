@@ -2,6 +2,8 @@ import React from 'react';
 import Flat from '../flat/flat.jsx';
 import PropTypes from 'prop-types';
 
+const titleClickHandler = () => {};
+
 const Main = (props) => {
   const {flatDescription} = props;
 
@@ -90,7 +92,7 @@ const Main = (props) => {
 
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {flatDescription.map((it, index) => <Flat flat = {it} key = {it + index}/>)}
+                {flatDescription.map((it, index) => <Flat flat = {it} key = {it + index} onTitleClick={titleClickHandler}/>)}
               </div>
             </section>
             <div className="cities__right-section">
